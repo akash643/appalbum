@@ -1,0 +1,23 @@
+<div class="container">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Album app</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+      
+      <li><% if !user_signed_in?%>
+      <a href="//users/sign_in">sign_in</a></li>
+      <%end%>
+      <li><% if current_user.present?%>
+      <%= link_to "signout", destroy_user_session_path,method: :delete,data: { confirm: "Are you sure?" }%>sign out</a></li>
+      <%end%>
+    </ul>
+  </div>
+</nav>
+  
+

@@ -1,0 +1,26 @@
+
+
+
+<table class="table">
+   <tr> 
+      <td colspan="4"; class="btn btn-success btn-block"><a href="<%=new_album_path%>" >add album</a></td>
+   </tr>
+    <tr>
+        <td>album_name</td>
+        <td>album_description</td>
+        <td>action</td> 
+    </tr>
+        <% @album.each do|i| %>
+        <tr><td><%=i.album_name%></td>
+        <td><%=i.album_description%></td>
+        <td> 
+
+         <%= link_to "delete",album_path(i.id),:class=>:"btn btn-danger",method: :delete,data: { confirm: "Are you sure?" }%>
+   
+        <a href="<%=edit_album_path(i.id)%>" class="btn btn-info">edit</a>
+        <a href="<%=album_path(i.id)%>" class="btn btn-info">show album</a>
+
+        </td>
+  </tr>
+  <%end%>
+  </table>

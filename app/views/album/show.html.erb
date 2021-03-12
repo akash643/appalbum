@@ -1,0 +1,40 @@
+
+<%= link_to "back",root_path,:class=>:"btn btn-primary"%> 
+<table class="table">
+  <tr>
+    <th><%=@album.album_name%></th>
+    <th>
+      <%=@album.album_description%>
+    </th>
+  </tr>
+</table>
+<h1>images:</h1>
+<% @album.images.each do |image| %>
+  <span style="width:140px; height:200px;">
+    <%= image_tag(image)%>
+    <%= link_to 'Remove', image_path(image.signed_id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%#= button_to 'Delete', image_path, :method => 'delete', data:{ confirm: "Are you sure?" } %>
+  <span>
+<% end %>
+
+<h2>Comments</h2>
+  <% @comenter.each do |comment| %>
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+
+  <h2>Add a comment:</h2>
+  <%= form_with model:@comment,url:album_comment_index_url(@album.id) do |form| %>
+    <p>
+      <%= form.label :body %><br>
+      <%= form.text_area :body %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+
+
