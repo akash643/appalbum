@@ -8,7 +8,7 @@ class AlbumController < ApplicationController
         @album =Album.find(params[:id])
         @album.images.attached?
         @comenter=@album.comments
-        
+
 
        end
      

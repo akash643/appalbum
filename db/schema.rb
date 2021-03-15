@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_03_11_090350) do
     t.string "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "album_image"
   end
 
   create_table "comments", force: :cascade do |t|
