@@ -4,5 +4,7 @@ class Album < ApplicationRecord
     has_many :comments
     validates :album_name,presence:true
     validates :album_description,presence:true
+    scope :sorted,lambda {order(album_name: :desc)}
+
     
 end

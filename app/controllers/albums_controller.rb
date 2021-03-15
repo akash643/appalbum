@@ -1,15 +1,12 @@
-class AlbumController < ApplicationController
-    def index
-
-        @album = current_user.albums
-       end
+class AlbumsController < ApplicationController
+        def index
+        @album = current_user.albums.sorted
+        end
      
        def show
-        @album =Album.find(params[:id])
+        @album = Album.find(params[:id])
         @album.images.attached?
-        @comenter=@album.comments
-
-
+        @comenter = @album.comments
        end
      
        def new
@@ -31,7 +28,7 @@ class AlbumController < ApplicationController
        def update 
          @album = Album.find(params[:id])
          if @album.update(album_params)
-           redirect_to root_path
+           redirect_to album_path
          else
            render('edit')
          end

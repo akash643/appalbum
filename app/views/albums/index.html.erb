@@ -3,12 +3,12 @@
 
 <table class="table">
    <tr> 
-      <td colspan="4"; class="btn btn-success btn-block"><a href="<%=new_album_path%>" >add album</a></td>
+      <td  class="btn btn-success btn-block"><a href="<%=new_album_path%>" >add album</a></td>
    </tr>
     <tr>
-        <td>album_name</td>
-        <td>album_description</td>
-        <td>action</td> 
+        <th>album_name</th>
+        <th>album_description</th>
+        <th>action</th> 
     </tr>
         <% @album.each do|i| %>
         <tr><td><%=i.album_name%></td>

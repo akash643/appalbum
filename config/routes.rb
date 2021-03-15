@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'home#index'
-  resources:home
-  resources:album do
-  resources:comment
+  root 'albums#index'
+  resources:homes
+  resources:albums do
+  resources:comments
   end
 
-  resources:image
+  resources:images
   
   
   

@@ -1,5 +1,6 @@
 
 <%= link_to "back",root_path,:class=>:"btn btn-primary"%> 
+<br>
 <table class="table">
   <tr>
     <th><%=@album.album_name%></th>
@@ -20,14 +21,14 @@
 <h2>Comments</h2>
   <% @comenter.each do |comment| %>
   <p>
-    <strong>Comment:</strong>
+    <strong>comments:</strong>
     <%= comment.body %>
   </p>
 <% end %>
 
 
   <h2>Add a comment:</h2>
-  <%= form_with model:@comment,url:album_comment_index_url(@album.id) do |form| %>
+  <%= form_with model:@comment,url:album_comments_path(@album.id) do |form| %>
     <p>
       <%= form.label :body %><br>
       <%= form.text_area :body %>
