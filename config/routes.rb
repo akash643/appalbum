@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'albums#index'
+  root 'homes#index'
   resources:homes
   resources:albums do
   resources:comments

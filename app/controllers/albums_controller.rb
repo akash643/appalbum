@@ -1,12 +1,12 @@
 class AlbumsController < ApplicationController
         def index
-        @album = current_user.albums.sorted
+            @album = current_user.albums.sorted
         end
      
        def show
-        @album = Album.find(params[:id])
-        @album.images.attached?
-        @comenter = @album.comments
+            @album = Album.find(params[:id])
+            @album.images.attached?
+            @comenter = @album.comments
        end
      
        def new
